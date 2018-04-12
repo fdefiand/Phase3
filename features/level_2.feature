@@ -28,7 +28,6 @@ Feature: Manage instructors
     And I should see "Heimann, Alex"
     And I should see "412-268-8211"
     And I should see "Bohn, Austin"
-    And I should see "Levin, Noah"
     And I should see "3"
     And I should not see "Show"
     And I should not see "Destroy"
