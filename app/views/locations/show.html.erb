@@ -1,3 +1,4 @@
+<br><br><br>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -43,7 +44,41 @@
   <%= @location.zip %>
 </p>
 
-Upcoming Camps:
+<h5>Upcoming Camps</h5> 
+
+<table>
+    <thead>
+      <tr>
+  
+        <th>Name</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Time</th>
+        <th>Max Students</th>
+        
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% @location.camps.each do |camp| %>
+      <tr>
+        
+        <td> <%= link_to camp.curriculum.name, camp %></td>
+        <td> <%= link_to camp.start_date.strftime("%m/%d/%y"), camp %></td>
+        <td> <%= link_to camp.end_date.strftime("%m/%d/%y"), camp %></td>
+        <td> <%= link_to camp.time_slot == "am" ? "Morning" : "Afternoon" %></td>
+        <td> <%= link_to camp.max_students, camp %></td>
+        
+        <td> <%= link_to 'Edit', edit_camp_path(camp) %></td>
+        
+      </tr>
+      <% end %>
+    </tbody>
+    
+
+  </table>
+  
+  <br>
 
 	
 <%= link_to 'Edit', edit_location_path(@location) %> |
